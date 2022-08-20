@@ -1,0 +1,20 @@
+
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  background-color: dimgray;
+}
+
+.wrap {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  width: 100px;
+}
+
+.wrap_element {
+  background-color: #9C9C9CFF;
+  padding: 5px;
+  border-bottom: 1px solid black;
+}

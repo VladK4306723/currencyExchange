@@ -1,0 +1,13 @@
+
+
+<div class="container">
+  <div *ngFor="let element of currency">
+    <div *ngIf="element.cc === 'USD' || element.cc === 'EUR'">
+      <div class="wrap">
+        <div class="wrap_element">{{element.rate}}</div>
+        <div class="wrap_element">{{element.cc}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+

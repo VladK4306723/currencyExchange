@@ -1,0 +1,26 @@
+
+<div class="container" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="inputs_wrap" formGroupName="currency">
+    <select (click)="exchange()" formControlName="exchangeFrom">
+      <option value="UAH">UAH</option>
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+    </select>
+      <input [value]="inputFromValue" (input)="onExchangeFrom($event)" type="number" placeholder="100.00" formControlName="currencyInputFrom">
+  </div>
+
+  <div class="middlePart_wrap">
+    <button (click)="onChangeDirect(); exchange()" type="button">⮃</button>
+  </div>
+
+  <div class="inputs_wrap" formGroupName="currency">
+    <select (click)="exchange()" formControlName="exchangeTo">
+      <option value="UAH">UAH</option>
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+    </select>
+    <input [value]="inputToValue" type="number" placeholder="100.00">
+  </div>
+
+  <button (click)="onSubmit()" type="submit" [disabled]="!form.dirty">exchange</button>
+</div>
