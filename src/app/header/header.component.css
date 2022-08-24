@@ -2,15 +2,15 @@
 
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   background-color: dimgray;
 }
 
 .wrap {
   display: flex;
   padding: 10px;
-  justify-content: space-between;
-  width: 100px;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .wrap_element {

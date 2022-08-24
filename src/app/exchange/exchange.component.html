@@ -1,16 +1,16 @@
 
-<div class="container" [formGroup]="form" (ngSubmit)="onSubmit()">
+<div class="container" [formGroup]="form" (ngSubmit)="onReset()">
   <div class="inputs_wrap" formGroupName="currency">
     <select (click)="exchange()" formControlName="exchangeFrom">
       <option value="UAH">UAH</option>
       <option value="USD">USD</option>
       <option value="EUR">EUR</option>
     </select>
-      <input [value]="inputFromValue" (input)="onExchangeFrom($event)" type="number" placeholder="100.00" formControlName="currencyInputFrom">
+      <input [value]="inputFromValue" (input)="onExchangeFrom($event)" type="number" placeholder="Enter value" formControlName="currencyInputFrom">
   </div>
 
   <div class="middlePart_wrap">
-    <button (click)="onChangeDirect(); exchange()" type="button">⮃</button>
+    <button (click)="onChangeDirect()" type="button">⮃</button>
   </div>
 
   <div class="inputs_wrap" formGroupName="currency">
@@ -19,8 +19,10 @@
       <option value="USD">USD</option>
       <option value="EUR">EUR</option>
     </select>
-    <input [value]="inputToValue" type="number" placeholder="100.00">
+    <input [value]="inputToValue" readonly type="number" placeholder="Exchanged value">
   </div>
 
-  <button (click)="onSubmit()" type="submit" [disabled]="!form.dirty">exchange</button>
+  <button (click)="onReset()" type="submit" [disabled]="!form.dirty">Reset</button>
 </div>
+
+

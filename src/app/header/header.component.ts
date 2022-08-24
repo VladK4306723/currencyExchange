@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CurrencyRateService} from "../currency-rate.service";
+import {CurrencyInt} from "../currencyInt.interface";
 
 @Component({
   selector: 'app-header',
@@ -8,18 +9,20 @@ import {CurrencyRateService} from "../currency-rate.service";
 })
 export class HeaderComponent implements OnInit {
 
-  currency: any[] = [];
+  readonly currencyCodeArr: String[] = [
+    'USD',
+    'EUR'
+  ]
+  currency: CurrencyInt[] = [];
 
-  constructor(private currencyService: CurrencyRateService) {
-
-  }
+  constructor(private currencyService: CurrencyRateService) {}
 
 
   ngOnInit() {
     this.currencyService.dataLoader.subscribe(data => {
       if (data) {
-        this.currency = this.currencyService.currency
+        this.currency = this.currencyService.getSetOfCurrency(this.currencyCodeArr);
       }
-    })
+    });
   }
 }
